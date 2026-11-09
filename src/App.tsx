@@ -55,7 +55,7 @@ function SiteHeader() {
             <span></span><span></span>
           </button>
         </div>
-        <nav id="mobile-navigation" className={'mobile-nav' + (menuOpen ? ' is-open' : '')} aria-label="Mobile navigation" inert={!menuOpen}>
+        <nav id="mobile-navigation" className={'mobile-nav' + (menuOpen ? ' is-open' : '')} aria-label="Mobile navigation">
           {navItems.map(item => <a href={item.href} key={item.href} onClick={() => setMenuOpen(false)}>{item.label} <Arrow diagonal /></a>)}
           <a href="#newsletter" onClick={() => setMenuOpen(false)}>Get the first look <Arrow diagonal /></a>
         </nav>
