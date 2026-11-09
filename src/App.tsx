@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { products, type Product } from './data/products';
 
 const navItems = [
@@ -11,15 +11,6 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
   return (
     <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" className="arrow-icon">
       <path d={diagonal ? 'M5 19 19 5M8 5h11v11' : 'M4 12h16m-7-7 7 7-7 7'} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function CloverMark({ className = '' }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 40 40" fill="none" aria-hidden="true">
-      <path d="M20 19C13 9 9 8 5 11c-5 5 1 12 13 10C9 26 8 31 12 35c5 4 12-2 9-14 6 11 12 14 16 9 4-5-2-11-16-10C33 14 34 9 29 6c-5-3-10 3-9 13Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
-      <path d="M20 20c.5 5 2 10 6 15" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
     </svg>
   );
 }
@@ -152,7 +143,7 @@ function App() {
       document.getElementById('email')?.focus({ preventScroll: true });
     });
   }
-  function handleSubscribe(event: React.FormEvent<HTMLFormElement>) {
+  function handleSubscribe(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!email.trim()) return;
     setEmail('');
