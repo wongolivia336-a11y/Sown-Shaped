@@ -64,7 +64,10 @@ function SiteHeader({ language, onLanguageChange }: { language: Language; onLang
         <div className="header-inner container">
           <a href="#top" className="brand-lockup" aria-label={t.home} onClick={() => setMenuOpen(false)}>
             <BrandMark />
-            <span>SOWN <span className="brand-amp">&</span> SHAPED<span className="brand-dot">.</span></span>
+            <span className="brand-type">
+              <span className="brand-name-en">SOWN <span className="brand-amp">&</span> SHAPED<span className="brand-dot">.</span></span>
+              <span className="brand-name-zh" lang="zh-CN"><span>平渡</span><span className="brand-name-pinyin">PINGDU</span></span>
+            </span>
           </a>
           <nav className="desktop-nav" aria-label={language === 'zh' ? '主导航' : 'Main navigation'}>
             {navItems.map(item => <a href={item.href} key={item.href}>{item.label}</a>)}
@@ -303,9 +306,15 @@ function App() {
       </main>
       <footer className="footer">
         <div className="container">
-          <div className="footer-top"><a className="footer-logo" href="#top">SOWN <span>&</span> SHAPED<span className="brand-dot">.</span></a><p>{t.heroBelief1}<br />{t.heroBelief2}</p></div>
+          <div className="footer-top">
+            <a className="footer-brand" href="#top" aria-label={t.home}>
+              <span className="footer-logo">SOWN <span>&</span> SHAPED<span className="brand-dot">.</span></span>
+              <span className="footer-brand-chinese" lang="zh-CN"><span>平渡</span><span>· PINGDU</span></span>
+            </a>
+            <p>{t.heroBelief1}<br />{t.heroBelief2}</p>
+          </div>
           <div className="footer-bottom">
-            <span>© {new Date().getFullYear()} Sown & Shaped. {t.independentConcept}</span>
+            <span>© {new Date().getFullYear()} Sown & Shaped · 平渡. {t.independentConcept}</span>
             <nav aria-label={language === 'zh' ? '页脚导航' : 'Footer navigation'}><a href="#collection">{t.footerCollection}</a><a href="#materials">{t.footerMaterials}</a><a href="#process">{t.footerApproach}</a><a href="#about">{t.footerStory}</a><a href="#top">{t.backToTop}</a></nav>
           </div>
         </div>

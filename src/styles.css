@@ -35,6 +35,10 @@ h1,h2,h3,p{margin-top:0}.hero h1,.section-heading h2,.principle-intro h2,.story-
 :root{font-family:"DM Sans",ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:#25241f;background:#faf9f5;--paper:#faf9f5;--paper-deep:#f0eee6;--ink:#25241f;--muted:#69675f;--line:#dedbd1;--blue:#3152d8;--serif:"Instrument Serif","Iowan Old Style","Baskerville","Palatino Linotype",Georgia,serif}
 html{scroll-behavior:smooth}
 .brand-lockup{gap:12px;letter-spacing:-.055em;transition:color .25s}
+.brand-type{display:flex;flex-direction:column;align-items:flex-start;gap:4px;line-height:1}
+.brand-name-en{font-size:16px;line-height:1}
+.brand-name-zh{display:flex;align-items:baseline;gap:7px;color:#777367;font-size:10px;font-weight:550;letter-spacing:.12em;line-height:1}
+.brand-name-pinyin{color:#969184;font-size:8px;letter-spacing:.18em}
 .brand-lockup:hover{color:#3152d8}
 .brand-symbol{width:30px;height:30px;color:#716b5e;transform:rotate(-8deg);transition:transform .45s cubic-bezier(.2,.7,.2,1),color .3s}
 .brand-lockup:hover .brand-symbol{transform:rotate(8deg);color:#3152d8}
@@ -89,6 +93,9 @@ html{scroll-behavior:smooth}
 .signup-note span{color:var(--blue);font-variant-numeric:tabular-nums}
 .signup-note i{display:block;width:15px;height:1px;background:#c6c1b5;margin-inline:3px}
 .footer{background:#eeece4}
+.footer-brand{display:inline-flex;flex-direction:column;align-items:flex-start;gap:10px}
+.footer-brand-chinese{display:flex;align-items:baseline;gap:9px;color:#625e53;font-size:16px;letter-spacing:.14em;line-height:1}
+.footer-brand-chinese span:last-child{color:#888376;font-size:9px;letter-spacing:.2em}
 .footer-logo{transition:color .25s}
 .footer-logo:hover{color:#3152d8}
 .menu-toggle{border-radius:50%;transition:background .25s,border-color .25s}
@@ -136,6 +143,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .nav-action:hover .arrow-icon{transform:translate(2px,-2px)}
 @media(max-width:850px){.header-inner{gap:14px}.nav-action{display:none}.menu-toggle{margin-left:auto}.language-switch{margin-left:0}}
 @media(max-width:380px){.header-inner{gap:7px}.brand-lockup{gap:8px;font-size:15px}.brand-symbol{width:26px;height:26px}.language-switch{margin-left:0}.language-switch button{min-width:32px;height:29px;padding:0 7px}.menu-toggle{width:40px;height:40px}}
+@media(max-width:640px){.brand-name-en{font-size:15px}.brand-name-zh{font-size:9px}.brand-name-pinyin{font-size:7px}.footer-brand{gap:9px}.footer-brand-chinese{font-size:14px}}
+@media(max-width:390px){.brand-name-en{font-size:14px}.brand-name-zh{gap:5px;font-size:8px}.brand-name-pinyin{font-size:7px}}
 .lang-zh .hero h1{font-size:clamp(56px,7.3vw,105px);letter-spacing:-.055em;white-space:normal}
 .lang-zh{font-family:"DM Sans","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;--serif:"Instrument Serif","Songti SC","Noto Serif CJK SC","STSong","SimSun",serif}
 .lang-zh .hero-belief{letter-spacing:-.02em}
